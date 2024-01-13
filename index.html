@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/storage/emulated/0/PBL code/style.css">
+
+<script>
+	function getDate(){
+var dt = new Date();
+document.getElementById('date-time').innerHTML=dt;
+	} </script>	
+<title>Resume Generator</title>
+</head>
+
+<body>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- first col  -->
+                <h3>Personal Information</h3>
+
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="contactField">Your Contact Number</label>
+                    <input type="text" id="contactField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="addressField">Your Address</label>
+                    <textarea id="addressField" placeholder="Enter here" class="form-control" rows="5"></textarea>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="">Select your photo</label>
+                    <input id = "imgField" type="file" class = "form-control">
+                </div>
+				 
+                <p class="text-secondary my-2">Important Links</p>
+
+                <div class="form-group">
+                    <label for="fbField">Facebook</label>
+                    <input type="text" id="fbField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" id="instaField" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="linkedField">LinkedIn</label>
+                    <input id="linkedField" placeholder="Enter here" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- second col  -->
+                <h3>Professional Information</h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea placeholder="Enter here" class="form-control" rows="5" id = "objectiveField"></textarea>
+                </div>
+                <!-- new textarea  -->
+                <div class="form-group mt-2 " id="we">
+                    <label for="">Work Experience</label>
+                    <textarea placeholder="Enter here" class="form-control weField " rows="3"></textarea>
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea placeholder="Enter here" class="form-control eqField" rows="3"></textarea>
+
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+					 <div class="form-group mt-2">
+                    <label for="">Upload Signature</label>
+                    <input id = "imgField" type="file" class = "form-control">
+                </div>
+					<lable for="date-time">Date and Time:</lable><input type="date" onload="getDate() id="date-time">  
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center my-2">
+            <button onclick = "generateCV()" class="btn btn-primary btn-lg ">Generate CV</button>
+        </div>
+    </div>
+
+    <div class="container mt-3" id="cv-template">
+        <div class="row">
+
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first col  -->
+
+                <img src="https://s3.amazonaws.com/37assets/svn/765-default-avatar.png" alt="" class="img-fluid myimg" id = "imgT">
+
+                <div class="contaier">
+                    <p id = "nameT1">Prasen Mhaskar</p>
+                    <P id = "contactT">+911234567891</P>
+                    <p id = "addressT">12,Dwarka,Nashik</p>
+
+                    <hr>
+
+                    <p><a id = "fbT" href="#">Facebook</a></p>
+                    <p><a id = "instaT" href="#">Instagram</a></p>
+                    <p><a id = "linkedT" href="#">LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second col  -->
+
+                <h1 id = "nameT2" class="text-center" style="font-weight: 980;">Prasen Mhaskar</h1>
+
+                <!-- Objective card  -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body background">
+                        <p id = "ObjectiveT">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, ducimus! Veniam ratione, repellendus iure doloribus commodi cupiditate accusantium, officiis vitae ullam eveniet dignissimos placeat natus unde mollitia, expedita nesciunt. Atque sed dolorum magni eveniet, natus dolore inventore non vel quas dolores dignissimos voluptatem aut harum.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Work Experience  -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body background">
+                        <ul id = "weT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Qualification -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body background">
+                        <ul id = "aqT">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, quo!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="containuer mt-3 text-center">
+                <button onclick = "printCV()" class="btn background">Print</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="/storage/emulated/0/PBL code/script.js"></script>
+</body>
+
+</html>
